@@ -67,11 +67,10 @@ def handle_sticker_message(event):
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     data = air()
-    # message = TextSendMessage(text="請輸入'空氣'來得知訊息"+event.message.text)
 
     k = 0
     try:
-        if event.message.text == "今天":
+        if event.message.text == "阿燕告訴我":
             message = TemplateSendMessage(
                 alt_text='Buttons template',
                 template=ButtonsTemplate(
@@ -110,34 +109,257 @@ def handle_message(event):
                 template=CarouselTemplate(
                     columns=[
                         CarouselColumn(
-                            thumbnail_image_url='https://upload.cc/i1/2020/01/03/17Pspz.jpg',
-                            title='高雄市',
-                            text='description1',
+                            thumbnail_image_url='https://upload.cc/i1/2020/01/03/OhcdPX.jpg',
+                            title='北部-1',
+                            text='請選擇地區',
                             actions=[
                                 MessageTemplateAction(
-                                    label='高雄(左營)',
-                                    text='高雄(左營)',
+                                    label='臺北市',
+                                    text='臺北市',
                                 ),
                                 MessageTemplateAction(
-                                    label='高雄(楠梓)',
-                                    text='高雄(楠梓)',
-                                )
-                            ]
+                                    label='新北市',
+                                    text='新北市',
+                                ),
+                                MessageTemplateAction(
+                                    label='基隆市',
+                                    text='基隆',
+                                )]
+
                         ),
                         CarouselColumn(
-                            thumbnail_image_url='https://upload.cc/i1/2020/01/03/ZskDji.jpg',
-                            title='台北市',
-                            text='description2',
+                            thumbnail_image_url='https://upload.cc/i1/2020/01/03/OhcdPX.jpg',
+                            title='北部-2',
+                            text='請選擇地區',
+                            actions=[MessageTemplateAction(
+                                    label='桃園市',
+                                    text='桃園市',
+                                ),
+                                MessageTemplateAction(
+                                    label='新竹',
+                                    text='新竹',
+                                ),
+                                MessageTemplateAction(
+                                    label='苗栗縣',
+                                    text='苗栗縣',
+                                )
+                            ]),
+                        CarouselColumn(
+                            thumbnail_image_url='https://upload.cc/i1/2020/01/03/OhcdPX.jpg',
+                            title='中部-1',
+                            text='請選擇地區',
                             actions=[
+                                MessageTemplateAction(
+                                    label='臺中市',
+                                    text='臺中市',
+                                ),
+                                MessageTemplateAction(
+                                    label='彰化縣',
+                                    text='彰化縣',
+                                ),
+                                MessageTemplateAction(
+                                    label='南投縣',
+                                    text='南投縣',
+                                )
+                            ]),
+                        CarouselColumn(
+                            thumbnail_image_url='https://upload.cc/i1/2020/01/03/OhcdPX.jpg',
+                            title='中南部-1',
+                            text='請選擇地區',
+                            actions=[
+                                MessageTemplateAction(
+                                    label='雲林縣',
+                                    text='雲林縣',
+                                ),
+                                MessageTemplateAction(
+                                    label='嘉義',
+                                    text='嘉義',
+                                ),
+                                MessageTemplateAction(
+                                    label='臺南市',
+                                    text='臺南市',
+                                )
+                            ]),
+                        CarouselColumn(
+                            thumbnail_image_url='https://upload.cc/i1/2020/01/03/OhcdPX.jpg',
+                            title='中南部-2',
+                            text='請選擇地區',
+                            actions=[
+                                MessageTemplateAction(
+                                    label='高雄市',
+                                    text='高雄市',
+                                ),
+                                MessageTemplateAction(
+                                    label='屏東縣',
+                                    text='屏東縣',
+                                ),
+                                MessageTemplateAction(
+                                    label='臺南市',
+                                    text='臺南市',
+                                )
+                            ]),
+                        CarouselColumn(
+                            thumbnail_image_url='https://upload.cc/i1/2020/01/03/OhcdPX.jpg',
+                            title='東部-2',
+                            text='請選擇地區',
+                            actions=[
+                                MessageTemplateAction(
+                                    label='臺東縣',
+                                    text='臺東',
+                                ),
+                                MessageTemplateAction(
+                                    label='花蓮縣',
+                                    text='花蓮縣',
+                                ),
+                                MessageTemplateAction(
+                                    label='宜蘭縣',
+                                    text='宜蘭縣',
+                                )
+                            ]),
+                        CarouselColumn(
+                            thumbnail_image_url='https://upload.cc/i1/2020/01/03/OhcdPX.jpg',
+                            title='離島',
+                            text='請選擇地區',
+                            actions=[
+                                MessageTemplateAction(
+                                    label='澎湖縣',
+                                    text='澎湖',
+                                ),
+                                MessageTemplateAction(
+                                    label='連江縣',
+                                    text='花蓮縣',
+                                ),
+                                MessageTemplateAction(
+                                    label='馬祖',
+                                    text='金門',
+                                )
+                            ])
+                    ]
+                )
+            )
+            line_bot_api.reply_message(event.reply_token, message)
+        if event.message.text == "臺北市":
+            message = TemplateSendMessage(
+                alt_text='Carousel template',
+                template=CarouselTemplate(
+                    columns=[
+                        CarouselColumn(
+                            thumbnail_image_url='https://upload.cc/i1/2020/01/03/ZskDji.jpg',
+                            title='台北市-1',
+                            text='請選擇站名',
+                            actions=[
+                                MessageTemplateAction(
+                                    label='士林',
+                                    text='士林',
+                                ),
+                                MessageTemplateAction(
+                                    label='中山',
+                                    text='中山',
+                                ),
                                 MessageTemplateAction(
                                     label='萬華',
                                     text='萬華',
+                                )]
+
+                        ),
+                        CarouselColumn(
+                            thumbnail_image_url='https://upload.cc/i1/2020/01/03/ZskDji.jpg',
+                            title='台北市-2',
+                            text='請選擇站名',
+                            actions=[MessageTemplateAction(
+                                label='古亭',
+                                text='古亭',
+                            ),
+                                MessageTemplateAction(
+                                    label='松山',
+                                    text='松山',
                                 ),
                                 MessageTemplateAction(
                                     label='大同',
                                     text='大同',
                                 )
+                            ])
+                    ]
+                )
+            )
+            line_bot_api.reply_message(event.reply_token, message)
 
+        if event.message.text == "高雄市":
+            message = TemplateSendMessage(
+                alt_text='Carousel template',
+                template=CarouselTemplate(
+                    columns=[
+                        CarouselColumn(
+                            thumbnail_image_url='https://upload.cc/i1/2020/01/03/IszlNK.jpg',
+                            title='高雄市-1',
+                            text='請選擇站名',
+                            actions=[
+                                MessageTemplateAction(
+                                    label='小港',
+                                    text='小港',
+                                ),
+                                MessageTemplateAction(
+                                    label='前鎮',
+                                    text='前鎮',
+                                ),
+                                MessageTemplateAction(
+                                    label='前金',
+                                    text='前金',
+                                )]
+
+                        ),
+                        CarouselColumn(
+                            thumbnail_image_url='https://upload.cc/i1/2020/01/03/IszlNK.jpg',
+                            title='高雄市-2',
+                            text='請選擇站名',
+                            actions=[MessageTemplateAction(
+                                label='左營',
+                                text='左營',
+                            ),
+                                MessageTemplateAction(
+                                    label='楠梓',
+                                    text='楠梓',
+                                ),
+                                MessageTemplateAction(
+                                    label='林園',
+                                    text='林園',
+                                )
+                            ]),
+                        CarouselColumn(
+                            thumbnail_image_url='https://upload.cc/i1/2020/01/03/IszlNK.jpg',
+                            title='高雄市-3',
+                            text='請選擇站名',
+                            actions=[
+                                MessageTemplateAction(
+                                    label='大寮',
+                                    text='大寮',
+                                ),
+                                MessageTemplateAction(
+                                    label='鳳山',
+                                    text='鳳山',
+                                ),
+                                MessageTemplateAction(
+                                    label='仁武',
+                                    text='仁武',
+                                )]
+                        ),
+                        CarouselColumn(
+                            thumbnail_image_url='https://upload.cc/i1/2020/01/03/IszlNK.jpg',
+                            title='高雄市-4',
+                            text='請選擇站名',
+                            actions=[
+                                MessageTemplateAction(
+                                    label='橋頭',
+                                    text='橋頭',
+                                ),
+                                MessageTemplateAction(
+                                    label='美濃',
+                                    text='美濃',
+                                ),
+                                MessageTemplateAction(
+                                    label=' ',
+                                    text=' ',
+                                ),
                             ]
                         )
                     ]
@@ -147,13 +369,16 @@ def handle_message(event):
 
         else:
             for i in data:
-                value = [i["County"], i["SiteName"], i["Status"]]
+                value = [i["County"], i["SiteName"], i["Status"], i['AQI']]
                 # if event.message.text == value[0]:
                 if event.message.text == i["SiteName"]:
                     k = k + 1
                     line_bot_api.reply_message(
                     event.reply_token,
-                    TextSendMessage(text="您所查詢的空氣品質" + value[2]))
+                    TextSendMessage(text="您所查詢的AQI為"+value[3]+" 空氣品質" + value[2]))
+
+
+
             if k == 0:
                 line_bot_api.reply_message(
                     event.reply_token,
@@ -162,3 +387,4 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text="發生錯誤"))
+
